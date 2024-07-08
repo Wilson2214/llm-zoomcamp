@@ -41,3 +41,25 @@ ollama pull phi3
 Note that we are still using the OpenAI API to make a call to our local (ollama) model so we still need the OpenAI api key to be added to the environment like in week 1. The difference is we are sending our request to the base_url which is hosted on port 11434. This video has a good explanation:
 
 https://www.youtube.com/watch?v=37nf3VgjFCk
+
+
+# Notes for Ollama with ElasticSearch Locally in Docker
+
+# initialize venv
+. llm_venv/bin/activate
+# Add OpenAI credentials
+export OPENAI_API_KEY='...
+# Run jupyter notebook
+jupyter notebook
+# New terminal run docker-compose
+docker-compose up
+# pull ollama model (could likely include in startup with docker-compose): 
+docker exec -it ollama bash
+ollama pull phi3
+
+# Could not get the above to work. Always times out for ollama locally
+
+
+# To run later part of homework:
+docker build -t ollama-gemma2b .
+docker run -it --rm -p 11434:11434 --name ollama-gemma2b ollama-gemma2b
