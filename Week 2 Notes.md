@@ -60,6 +60,10 @@ ollama pull phi3
 # Could not get the above to work. Always times out for ollama locally
 
 
+# To deploy and run qa_faq.py will need to have the above running in docker or locally (i.e. have the docs downloaded / indexed and running)
+# Then can deploy with ui
+
+
 # To run later part of homework:
 docker build -t ollama-gemma2b .
 docker run -it --rm -p 11434:11434 --name ollama-gemma2b ollama-gemma2b
