@@ -1,0 +1,1 @@
+Spinning up elasticsearch docker in order to perform semantic search
